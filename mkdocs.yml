@@ -1,0 +1,26 @@
+site_name: Cours 
+nav:
+  - Home: index.md
+  - About: about.md
+  - Loi normale : loi_normale.md
+  - cours NSI : essai_export.md
+  - Exemple tm : ericF.md
+  - Codim : Structures de données(1).md
+
+plugins:
+  - search
+  - print-site
+
+
+markdown_extensions:
+  - attr_list
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+

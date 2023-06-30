@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Loi normale - Cours</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../css/print-site-enum-headings1.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings2.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings3.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings4.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings5.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings6.css" rel="stylesheet">
+        <link href="../css/print-site.css" rel="stylesheet">
+        <link href="../css/print-site-mkdocs.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Cours</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Loi normale</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../essai_export/" class="nav-link">cours NSI</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../ericF/" class="nav-link">Exemple tm</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../about/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../essai_export/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#1-lien-avec-la-loi-binomiale" class="nav-link">1 Lien avec la loi binômiale</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#2-deuxieme-rencontre-avec-la-loi-normale" class="nav-link">2 Deuxième rencontre avec la loi normale</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#3-moyenne-mu-et-ecart-type-sigma-dune-loi-normale-mathcaln-m-sigma" class="nav-link">3 Moyenne \(\mu\) et Écart-type \(\sigma\) d'une loi normale \(\mathcal{N} (m ; \sigma)\)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#4-comment-calculer-une-probabilite-avec-une-variable-suivant-une-loi-normale-mathcaln-m-sigma" class="nav-link">4 Comment calculer une probabilité avec une variable suivant une loi normale \(\mathcal{N} (m ; \sigma)\)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#41-avec-une-calculatrice-un-tableur" class="nav-link">4.1 Avec une calculatrice, un tableur</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#42-en-utilisant-la-courbe-de-gauss" class="nav-link">4.2 En utilisant la courbe de Gauss</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#43-avec-la-regle-du-1sigma-2sigma-et-3sigma" class="nav-link">4.3 Avec la règle du 1\(\sigma\), 2\(\sigma\) et 3\(\sigma\)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#5-exercices" class="nav-link">5 Exercices</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Une loi à densité commune : la loi normale</p>
+<p>BTS MC1</p>
+<h1 id="1-lien-avec-la-loi-binomiale">1 Lien avec la loi binômiale</h1>
+<p>La loi binômiale est une loi discrète mais en « épaississant » les batons du 
+diagramme de sa représentation, on se ramène à un calcul d'aires de 
+rectangles.</p>
+<p>Si <span class="arithmatex">\(X \hookrightarrow\)</span><span class="arithmatex">\(\mathcal{B} (10 ; 0, 6)\)</span> alors :</p>
+<div class="arithmatex">\[ P (X = k) = \cdots \]</div>
+<p>Le sommet des rectangles obtenus appartiennent à une courbe en cloche 
+permettant de se ramener à un calcul de probabilités avec une loi à densité. 
+Cette loi à densité s'appelle la <strong>loi normale</strong>.</p>
+<p><strong>Exemple</strong> : Représenter la loi <span class="arithmatex">\(\mathcal{B} (10 ; 0, 6)\)</span></p>
+<p>1118.01.0111.07.0</p>
+<p>La fonction de densité s'appelle <strong>une gaussienne</strong> (ou « courbe en cloche ») 
+et elle intervient dans la modélisation de phénomènes aléatoires possédant de 
+nombreuses causes indépendantes, dont les effets s'ajoutent sans que l'un 
+d'eux soit dominant : par exemple, dans les mesures physiques avec de 
+multiples erreurs indépendantes.</p>
+<p><strong>Remarque:</strong> pourquoi remplacer dans les calculs la loi binômiale par la loi 
+normale de même espérance et de même densité ?</p>
+<table style="display: inline-table; vertical-align: middle">
+  <tbody><tr>
+    <td style="text-align: center; background-color: #80808040; border-bottom: 1px solid"><p>
+      <strong>Avantages</strong>
+    </p></td>
+    <td style="text-align: center; background-color: #80808040; border-bottom: 1px solid"><p>
+      <strong>Inconv&eacute;nient</strong>s
+    </p></td>
+  </tr><tr>
+    <td style="padding-left: 0.2cm; padding-right: 0.2cm; padding-bottom: 0.2cm; padding-top: 0.2cm; border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid"><p>
+      Les calculs sont faciles &agrave; r&eacute;aliser par des machines (ce
+      sont des calculs d'aires).
+    </p><p>
+      Alors que pour le calcul de la loi bin&ocirc;miale , les algorithmes
+      utilisent des nombres tr&egrave;s grands li&eacute;s aux arbres de
+      bernoulli et les machines sont rapidement limit&eacute;s par leurs
+      capacit&eacute;s.
+    </p></td>
+    <td style="padding-left: 0.2cm; padding-right: 0.2cm; padding-bottom: 0.2cm; padding-top: 0.2cm; border-top: 1px solid; border-bottom: 1px solid; border-left: 1px solid; border-right: 1px solid"><p>
+      Pour mod&eacute;liser la loi normale &agrave; partir d'une loi
+      bin&ocirc;miale, il faut calculer l'esp&eacute;rance et
+      l'&eacute;cart-type de cette loi.
+    </p><p>
+      Les calculs sont moins pr&eacute;cis puisqu'on utilise des
+      approximations avec des rectangles.
+    </p></td>
+  </tr></tbody>
+</table>
+
+<h1 id="2-deuxieme-rencontre-avec-la-loi-normale">2 Deuxième rencontre avec la loi normale</h1>
+<p>On suppose que le résultat d'une mesure est un nombre décimal au hasard entre 
+0 et 100. Plus précisément, on suppose que la  variable <span class="arithmatex">\(X\)</span> donnant les 
+résultat d'une mesure suivra la loi uniforme <span class="arithmatex">\(\mathcal{U} [0 ; 100]\)</span>.</p>
+<p><strong>Figure.</strong> on répète 100 fois une mesure- répartition des résultats.</p>
+<p>Calculons maintenant la moyenne de 10 mesures et répétons cette opération 100 
+fois.</p>
+<p>Cette moyenne est aussi une variable aléatoire <span class="arithmatex">\(F\_{10}\)</span> dont l'histogramme 
+des fréquences « suggère » qu'elle suit une courbe en cloche de moyenne 50.</p>
+<p><strong>Figure.</strong> on répète 100 fois une moyenne de 10 mesures - répartition des 
+résultats</p>
+<p><strong>Remarque:</strong> si on change la loi de <span class="arithmatex">\(X\)</span> (par exemple, <span class="arithmatex">\(X \hookrightarrow 
+\mathcal{E} (0, 05)\)</span>),  on peut faire la même remarque en passant à la 
+moyenne.</p>
+<p><strong>C'est un fait général :</strong></p>
+<p><em>La variable moyenne des résultats d'une variable aléatoire suivant une loi 
+quelconque suit une loi normale.</em></p>
+<table style="display: inline-table; vertical-align: middle">
+  <tbody><tr>
+    <td><p>
+      <img class="image" src="image-1.png" width="45%"></img>
+    </p></td>
+    <td><p>
+      <img class="image" src="image-2.png" width="45%"></img>
+    </p></td>
+  </tr></tbody>
+</table>
+
+<h1 id="3-moyenne-mu-et-ecart-type-sigma-dune-loi-normale-mathcaln-m-sigma">3 Moyenne <span class="arithmatex">\(\mu\)</span> et Écart-type <span class="arithmatex">\(\sigma\)</span> d'une loi normale <span class="arithmatex">\(\mathcal{N} (m ; \sigma)\)</span></h1>
+<p><strong>Figure.</strong> Quelques exemples de courbes « en cloche » avec des paramètres <span class="arithmatex">\(m\)</span> 
+et <span class="arithmatex">\(\sigma\)</span></p>
+<h1 id="4-comment-calculer-une-probabilite-avec-une-variable-suivant-une-loi-normale-mathcaln-m-sigma">4 Comment calculer une probabilité avec une variable suivant une loi normale <span class="arithmatex">\(\mathcal{N} (m ; \sigma)\)</span></h1>
+<h2 id="41-avec-une-calculatrice-un-tableur">4.1 Avec une calculatrice, un tableur</h2>
+<table style="display: inline-table; vertical-align: middle">
+  <tbody><tr>
+    <td><p>
+      <img class="image" src="image-1.png" width="45%"></img>
+    </p></td>
+    <td><p>
+      <img class="image" src="image-2.png" width="45%"></img>
+    </p></td>
+  </tr><tr>
+    <td><p>
+      <img class="image" src="image-3.png" width="45%"></img>
+    </p></td>
+    <td style="vertical-align: middle"><p>
+      <img class="image" src="image-4.png" width="45%"></img>
+    </p></td>
+  </tr></tbody>
+</table>
+
+<h2 id="42-en-utilisant-la-courbe-de-gauss">4.2 En utilisant la courbe de Gauss</h2>
+<p>Cannot process embedded image</p>
+<h2 id="43-avec-la-regle-du-1sigma-2sigma-et-3sigma">4.3 Avec la règle du 1<span class="arithmatex">\(\sigma\)</span>, 2<span class="arithmatex">\(\sigma\)</span> et 3<span class="arithmatex">\(\sigma\)</span></h2>
+<table style="display: inline-table; vertical-align: middle">
+  <tbody><tr>
+    <td><p>
+      <img class="image" src="image-1.png" width="65%"></img>
+    </p></td>
+    <td style="vertical-align: middle"><p>
+      <img class="image" src="image-2.png" width="30%"></img>
+    </p></td>
+  </tr></tbody>
+</table>
+
+<h1 id="5-exercices">5 Exercices</h1>
+<p><strong>Exercice 1:</strong></p>
+<p><em>Cannot process embedded image</em></p>
+<p><strong>Exercice 2:</strong></p>
+<p><em>Cannot process embedded image</em></p>
+<p><strong>Exercice 3:</strong></p>
+<p><em>Cannot process embedded image</em></p>
+<p><strong>Exercice 4:</strong></p>
+<p><em>Cannot process embedded image</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/print-site.js" defer></script>
+        <script src="../javascripts/mathjax.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Exemple tm - Cours</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+        <link href="../css/print-site-enum-headings1.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings2.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings3.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings4.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings5.css" rel="stylesheet">
+        <link href="../css/print-site-enum-headings6.css" rel="stylesheet">
+        <link href="../css/print-site.css" rel="stylesheet">
+        <link href="../css/print-site-mkdocs.css" rel="stylesheet">
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Cours</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../loi_normale/" class="nav-link">Loi normale</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../essai_export/" class="nav-link">cours NSI</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Exemple tm</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../essai_export/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#1-point-de-vue-probabiliste" class="nav-link">1 Point de vue probabiliste</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#2-point-de-vue-statistique" class="nav-link">2 Point de vue statistique</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#3-point-de-vue-differentiel" class="nav-link">3 Point de vue différentiel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p><span class="arithmatex">\(T =\)</span>variable aléatoire donnant la durée de vie d'un atome.</p>
+<h1 id="1-point-de-vue-probabiliste">1 Point de vue probabiliste</h1>
+<p><strong>Modèle de désintégration = durée de vie sans vieillissement</strong> :</p>
+<p><em>La probabilité qu'un atome soit « vivant » à l'intant <span class="arithmatex">\(t + h\)</span> sachant qu'il 
+est « vivant » à l'instant <span class="arithmatex">\(t\)</span> ne dépend pas de <span class="arithmatex">\(t\)</span> (quel que soit <span class="arithmatex">\(h\)</span>) :</em></p>
+<div class="arithmatex">\[ P_{(T &gt; t)} (T &gt; t + h) = P (T &gt; t) \]</div>
+<p>On en tire que1em: <span class="arithmatex">\(P (T &gt; t + h) = P (T &gt; t) \times P (T &gt; h)\)</span> 
+pour tout <span class="arithmatex">\(t, h\)</span></p>
+<p>La fonction <span class="arithmatex">\(G (x) = P (T &gt; x)\)</span> vérifie donc la propriété : <span class="arithmatex">\(G (x + y) = G 
+(x) \times G (y)\)</span> pour <span class="arithmatex">\(x, y \geqslant 0\)</span></p>
+<p>Alors on peut alors démontrer qu'une telle fonction est une exponentielle. 
+Plus précisément, il existe un réel <span class="arithmatex">\(\lambda &gt; 0\)</span> (<span class="arithmatex">\(&gt; 0\)</span> car une 
+probabilité <span class="arithmatex">\(\in [0 ; 1]\)</span>) tel que <span class="arithmatex">\(G (x) = e^{\- \lambda x}\)</span>.</p>
+<p>On a donc <span class="arithmatex">\(P (T &gt; t) = e^{\- \lambda t} \Longleftrightarrow P (T \leqslant 
+t) = 1 - e^{- \lambda t}\)</span>.</p>
+<p>Ce sont les formules de calcul des probabilités d'une loi exponentielle à 
+densité <span class="arithmatex">\(f (t) = \lambda e^{\- \lambda t}\)</span>.</p>
+<p>La valeur moyenne dans une loi exponentielle est <span class="arithmatex">\(\dfrac{1}{\lambda}\)</span>. C'est 
+donc la durée moyenne de vie d'<strong>un</strong> <strong>atome</strong> avec ce modèle.</p>
+<h1 id="2-point-de-vue-statistique">2 Point de vue statistique</h1>
+<p><img alt="un histogramme" src="../img/screen-2023-06-28-16-37-45.png" /></p>
+<p><a href="https://www.cea.fr/comprendre/Pages/radioactivite/radioactivite.aspx?Type=Chapitre&amp;numero=1">voir une explication</a></p>
+<p>En statistique, on réfléchit sur un échantillon.</p>
+<p>Si on appelle <span class="arithmatex">\(N (t)\)</span> le nombre d'atomes vivants à l'instant <span class="arithmatex">\(t\)</span>, on doit 
+plutôt considérer ce nombre comme une moyenne, la moyenne de <span class="arithmatex">\(N\_{0}\)</span> 
+variables aléatoires dont chacune vaut 1 si l'atome est vivant et 0 sinon (=la 
+valeur moyenne d'une variable suivant une loi binômiale).</p>
+<p>Il faut d'abord préciser le modèle précédent  :</p>
+<ul>
+<li>chaque atome se désintègre sans vieillissement</li>
+<li>les atomes ne s'influencent pas et au départ, on en a <span class="arithmatex">\(N\_{0}\)</span>.</li>
+</ul>
+<p>A l'instant <span class="arithmatex">\(t\)</span>, chaque atome a une probabilité <span class="arithmatex">\(P (T &gt; t) = e^{\- \lambda 
+t}\)</span> d'ếtre vivant. Comme on en a <span class="arithmatex">\(N\_{0}\)</span>, le nombre de survivants sera 
+en moyenne <span class="arithmatex">\(N\_{0} e^{\- \lambda t}\)</span>. (loi binomiale : nombre répétitions 
+× proba succès))</p>
+<p>En gros, on peut considérer <span class="arithmatex">\(\dfrac{N (t)}{N\_{0}}\)</span> comme la proportion de 
+survivants à l'instant <span class="arithmatex">\(t\)</span> et elle vaut  <span class="arithmatex">\(P (T &gt; t) = e^{\- \lambda t}\)</span>.</p>
+<p>Expérimentalement, on va seulement observer un échantillon d'atomes qui 
+donnera des valeurs expérimentales <span class="arithmatex">\(\hat{N} (t)\)</span> « proches » de <span class="arithmatex">\(N (t)\)</span>.</p>
+<p>On mesure les durées de vie d'atomes dans un échantillon et on place les 
+résultats dans un histogramme : (en ordonnées: %tage de survivants à l'instant 
+<span class="arithmatex">\(t\)</span>)</p>
+<p>Sur un échantillon, on voit que les sommets des barres semblent suivre une 
+fonction cste × exponentielle (en fait la densité). En effet, <span class="arithmatex">\(\hat{N} 
+(t) \approx N (t) = N_{0} e^{\- \lambda t}\)</span></p>
+<h1 id="3-point-de-vue-differentiel">3 Point de vue différentiel</h1>
+<p>La vitesse instantannée de désintégration est :</p>
+<p>\[ \lim _{h \longrightarrow 0} \dfrac{N (t) - N (t + h)}{h} = N' (t) \]</p>
+<p>où <span class="arithmatex">\(N (t)\)</span> est la variable aléatoire donnant le nombre moyen d'atomes vivants 
+à l'instant <span class="arithmatex">\(t\)</span> .</p>
+<p>Expérimentalement, en estimant <span class="arithmatex">\(N (t)\)</span> et <span class="arithmatex">\(N (t + h)\)</span> sur un échantillon (on 
+devrait dire : $\hat{N} (t) $et <span class="arithmatex">\(\hat{N} (t + h)\)</span>), on doit pouvoir observer 
+que cette vitesse est une constante × exponentielle ce qui veut dire que 
+<span class="arithmatex">\(\dfrac{N' (t)}{N (t)}\)</span> semble être une constante indépendante de t.</p>
+<p>Or <span class="arithmatex">\(\dfrac{N' (t)}{N (t)} = \dfrac{\dfrac{N' (t)}{N\_{0}}}{\dfrac{N 
+(t)}{N\_{0}}} = \- \dfrac{{\lim \_{h \longrightarrow 0}}\_{} P (t &lt; T 
+&lt; t + h)}{P (t &gt; h)} = \lim \_{t \longrightarrow 0} \- \dfrac{P (t 
+&lt; T &lt; t + h)}{P (T &gt; h)} =  \- \lim \_{h \longrightarrow 0} 
+P\_{(T &gt; h)} (t &lt; T &lt; t + h)\)</span></p>
+<p>On appelle λ cette constante$ \lim _{h \longrightarrow 0} P_{(T &gt; 
+t)} (t &lt; T &lt; t + h)$; on l'interpèrete comme :</p>
+<ul>
+<li>le taux de défaillance instantannée à l'instant <span class="arithmatex">\(t\)</span> (c'est l'interprétation 
+  de <span class="arithmatex">\(\- \dfrac{N' (t)}{N (t)}\)</span>)</li>
+<li>la probabilité qu'à un instant <span class="arithmatex">\(t\)</span> un vivant se désintègre.</li>
+</ul>
+<p>On a donc : N'(t)N(t)<span class="arithmatex">\(= \- \lambda\)</span> et donc <span class="arithmatex">\(N (t) = C e^{\- \lambda t}\)</span> et 
+finalement : <span class="arithmatex">\(N (t) = N\_{0} e^{\- \lambda t}\)</span> c'est-à-dire <span class="arithmatex">\(\dfrac{N 
+(t)}{N\_{0}} = e^{\- \lambda t}\)</span></p>
+<p>Comme vu plus haut : <span class="arithmatex">\(\dfrac{N (t)}{N\_{0}} = P (T &gt; t)\)</span> donc <span class="arithmatex">\(P (T &gt; 
+t) = e^{\- \lambda t}\)</span> et on retombe sur les formules de la loi 
+exponentielle[^1].</p>
+<p>[^1]: On peut démontrer qu'un objet qui subit un taux de défaillance constant <span class="arithmatex">\(\lambda\)</span> a une durée de vie vérifiant la loi exponentielle de paramètre <span class="arithmatex">\(\lambda\)</span> .</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../js/print-site.js" defer></script>
+        <script src="../javascripts/mathjax.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
